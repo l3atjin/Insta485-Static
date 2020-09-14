@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insta485</title>
+</head>
+<body>
+	<div>
+		<a href="/explore/">explore</a>
+		<a href="/">home</a>
+		<a href="/u/{{logname}}/">{{logname}}</a>
+	</div>
+	<h2>{{username}}</h2>
+
+	{% if logname_follows_username and username != logname %}
+		<p>following</p>
+	{% elif not logname_follows_username and username != logname %}
+		<p>not following</p>
+	{% endif %}
+
+	<div>
+		{% if total_posts == 1 %}
+			<p>1 post</p>
+		{% else %}
+			<p>{{total_posts}} posts</p>
+		{% endif %}
+
+		{% if followers == 1 %}
+			<p><a href="/u/{{username}}/followers/">1 follower</a></p>
+		{% else %}
+			<p><a href="/u/{{username}}/followers/">{{followers}} followers</a></p>
+		{% endif %}
+
+		<p><a href="/u/{{username}}/following/">{{following}} following</a></p>
+		
+		
+		<p>{{fullname}}</p>
+	</div>
+
+	<div>
+		{% for post in posts %}
+			<a href="/p/{{post['postid']}}"><img src="{{post['img_url']}}" width="400" height="400"></a>
+		{% endfor %}
+	</div>
+
+
+</body>
+</html>

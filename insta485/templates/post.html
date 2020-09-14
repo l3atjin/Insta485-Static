@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>posts</title>
+</head>
+<body>
+	<div>
+		<a href="/">home</a>
+		<a href="/explore/">explore</a>
+		<a href="/u/{{logname}}/">{{logname}}</a>
+	</div>
+
+	<img src="{{img_url}}">
+	<img src="{{owner_img_url}}" width="20" height="20">
+	<p>{{owner}}</p>
+	<p>{{timestamp}}</p>
+	{% if likes == 1 %}
+		<p>1 like</p>
+	{% else %}
+		<p>{{likes}} likes</p>
+	{% endif %}
+
+	{% for comment in comments %}
+		<p>{{comment["owner"]}}</p>
+		<p>{{comment["text"]}}</p>
+	{% endfor %}
+
+</body>
+</html>
