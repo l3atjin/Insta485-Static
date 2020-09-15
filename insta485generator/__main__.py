@@ -6,10 +6,11 @@ import json
 from pathlib import Path
 from Jinja2 import Template
 
+
 @click.command()
 @click.argument('inputDir')
-@click.option('--verbose', '-v', isVerbose = True, default = False, help='Print more output.')
-@click.option('--output', '-o', nargs = 1, default = "html", required = True, help='Output directory.')
+@click.option('--verbose', '-v', isVerbose=True, default=False, help='Print more output.')
+@click.option('--output', '-o', nargs=1, default="html", required=True, help='Output directory.')
 
 
 def main():

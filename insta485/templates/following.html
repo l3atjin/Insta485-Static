@@ -11,7 +11,7 @@
 	</div>
 	<h2>Following</h2>
 	{% for x in followers %}
-		<img src="{{x['user_img_url']}}" width = "20" height = "20">
+		<img src="{{x['user_img_url']}}" width = "20" height = "20" alt="yeehaw">
 		<p>{{x["username"]}}</p>
 		{% if x["logname_follows_username"] and logname != x["username"] %}
 			<p>following</p>

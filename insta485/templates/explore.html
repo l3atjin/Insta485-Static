@@ -12,7 +12,7 @@
 	<h2>Discover people</h2>
 
 	{% for x in not_following %}
-		<img src="{{x['user_img_url']}}" width="20" height="20">
+		<img src="{{x['user_img_url']}}" width="20" height="20" alt="yeehaw">
 		<p>{{x["username"]}}</p>
 	{% endfor %}
 
