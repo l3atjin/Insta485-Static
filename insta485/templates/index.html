@@ -14,16 +14,17 @@
 
 		<div>
 			<a href="/u/{{logname}}/index.html">{{logname}}</a>
-			<a href="/p/{{post['postid']}}">{{post["timestamp"]}}</a>
-			<img src="{{img_url}}" alt="yeehaw">
-			{% if likes == 1 %}
+			<a href="/u/{{post.owner}}/"><img src="{{post.owner_img_url}}" alt="yeehaw" width="50" height="50"></a>
+			<a href="/p/{{post['postid']}}/">{{post["timestamp"]}}</a>
+			<img src="{{post.img_url}}" alt="yeehaw">
+			{% if post.likes == 1 %}
 				<p>1 like</p>
 			{% else %}
-				<p>{{likes}} likes</p>
+				<p>{{post.likes}} likes</p>
 			{% endif %}
 			
 			{% for comment in post["comments"] %}
-				<p><a href='/u/{{comment["owner"]}}'> user1 </a> {{comment["text"]}}</p>
+				<p><a href='/u/{{comment["owner"]}}/'> {{comment.owner}} </a> {{comment["text"]}}</p>
 			{% endfor %}
 		</div>
 	

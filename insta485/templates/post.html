@@ -11,9 +11,9 @@
 	</div>
 
 	<img src="{{img_url}}" alt="yeehaw">
-	<img src="{{owner_img_url}}" width="20" height="20" alt="yeehaw">
-	<p>{{owner}}</p>
-	<p>{{timestamp}}</p>
+	<a href="/u/{{owner}}/"><img src="{{owner_img_url}}" width="20" height="20" alt="yeehaw"></a>
+	<p><a href="/u/{{owner}}/">{{owner}}</a></p>
+	<p><a href="/p/{{postid}}/">{{timestamp}}</a></p>
 	{% if likes == 1 %}
 		<p>1 like</p>
 	{% else %}
@@ -21,7 +21,7 @@
 	{% endif %}
 
 	{% for comment in comments %}
-		<p>{{comment["owner"]}}</p>
+		<p><a href="/u/{{owner}}/">{{comment["owner"]}}</a></p>
 		<p>{{comment["text"]}}</p>
 	{% endfor %}
 

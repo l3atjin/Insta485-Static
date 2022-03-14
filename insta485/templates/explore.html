@@ -13,7 +13,7 @@
 
 	{% for x in not_following %}
 		<img src="{{x['user_img_url']}}" width="20" height="20" alt="yeehaw">
-		<p>{{x["username"]}}</p>
+		<p><a href="/u/{{x.username}}/">{{x["username"]}}</a></p>
 	{% endfor %}
 
 </body>
